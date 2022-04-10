@@ -1,0 +1,40 @@
+.chessBoard {
+    background-color: burlywood;
+    height:100mm;
+    width: 100mm;
+    margin-left: 10%;
+    border: 1px solid black;
+    display: table;
+}
+
+.chess-tr {
+    display: table-row;
+    height: 20px;
+    margin: 0;
+    border: 1px solid black;
+}
+
+.chess-tr div{
+    display: table-cell;
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.chessBoard .chess-tr:nth-child(odd) .cell:nth-child(odd) {
+	background: white;
+}	
+
+.chessBoard .chess-tr:nth-child(even) .cell:nth-child(even) {
+	background: white;
+}
+
+#catalog {
+    display: flex;
+    justify-content: space-between;
+}
+
+.goodsCard {
+    width: 150px;
+    border: 1px solid black;
+} 
