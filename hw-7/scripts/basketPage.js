@@ -32,11 +32,9 @@ drowConfirmWindow(wrapperDiw, userAdress);
 idBasketCatalog.addEventListener('click', function(e) {
   if(e.target.tagName == 'BUTTON') {
     removeToBasket(user1, user1._basket[e.target.dataset.delete]);
-    // Не лучшее решение, так как каждый раз заново отрисывывать каталог корзины
-    idBasketCatalog.innerHTML = '';
-    wrapperDiw.innerHTML = '';
-    drowBasketPage(wrapperDiw);
-    drowUserBasket(idBasketCatalog, user1._basket);
+    // заменил на автообновление страницы, странно, когда проверял перед отправкой
+    // на гит вроде все перерисовывалось нормально
+    location.reload();
     idTotalBasket.textContent = user1.showTotalBasket;
     console.table(user1.showUserBasket);
   }
