@@ -44,8 +44,11 @@ catalog.addEventListener('click', function(e) {
     if( e.target.tagName === 'IMG' ) {
         popup.textContent = '';
         popup.style.display = 'flex';
-        popup.insertAdjacentHTML('beforeend',
-            `<img src="${e.target.getAttribute('src')}" class="scale">`);
+        popup.insertAdjacentHTML('beforeEnd',
+            `<div class="img-privios"><</div>
+            <img src="${e.target.getAttribute('src')}" class="scale">
+             <div class="img-next">></div>`);
+            
     }
 });
 

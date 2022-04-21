@@ -1,6 +1,7 @@
 `use strict`
 // Загружаем пользователя и данные о нем
 const user1 = loadUser();
+console.log(user1);
 const userProfile = document.querySelector('#user-profile');
 userProfile.textContent = user1.fullName;
 
@@ -38,6 +39,25 @@ idBasketCatalog.addEventListener('click', function(e) {
     idTotalBasket.textContent = user1.showTotalBasket;
     console.table(user1.showUserBasket);
   }
+});
+
+// Настройка событий для просмотра изображения
+const popup = document.querySelector('#popup');
+
+popup.addEventListener('click', function(e) {
+    popup.style.display = 'none';
+});
+
+idBasketCatalog.addEventListener('click', function(e) {
+    if( e.target.tagName === 'IMG' ) {
+        popup.textContent = '';
+        popup.style.display = 'flex';
+        popup.insertAdjacentHTML('beforeEnd',
+            `<div class="img-privios"><</div>
+            <img src="${e.target.getAttribute('src')}" class="scale">
+             <div class="img-next">></div>`);
+            
+    }
 });
 
 // Настройка событий по кнопкам перехода

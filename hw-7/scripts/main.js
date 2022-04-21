@@ -84,18 +84,18 @@ function genProduct() {
 	const imgPaths = ['vidioCard', 'proc', 'mouse'];
 	const categories = ['Видиокарты', 'Процессоры', 'Компъютерные мыши'];
 	const randNames = ['rtm12', 'A2', 'YouH5', 'int7', 'someName 1', 'name5', 'Y17 G157'];
-	const randImg = randomInt(1, 3);
 
 	const category = categories[randomInt(0, categories.length - 1)];
 	const imgPath = imgPaths[categories.indexOf(category)];
 	const name = randNames[randomInt(0, randNames.length - 1)];
 	const price = randomInt(100, 100000);
 	const discount = randomInt(0, 40);
-	const img = [
-		`img/${imgPath}/${randImg}.jpg`, 
-		`img/${imgPath}/${randImg}.jpg`, 
-		`img/${imgPath}/${randImg}.jpg`
-		];
+	const img = Array();
+
+	for(let i = 0; i < 3; i++) {
+		let randImg = randomInt(1, 3);
+		img.push(`img/${imgPath}/${randImg}.jpg`);
+	}
 
 	return new Product(category, name, price, discount, img);
 }
